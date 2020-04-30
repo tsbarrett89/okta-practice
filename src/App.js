@@ -2,6 +2,7 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 import { Security } from '@okta/okta-react';
 
+import Login from './components/Login';
 
 const config = {
   clientId: '0oaapt0s0EjOyHmVd4x6',
@@ -16,6 +17,7 @@ function App() {
   return (
     <div>
       <Security {...config}>
+        <Route exact path='/' component={Login} />
         <Route path={CALLBACK_PATH} />
       </Security>
     </div>
