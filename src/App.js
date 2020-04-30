@@ -2,7 +2,7 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 import { Security, LoginCallback, SecureRoute } from '@okta/okta-react';
 
-import Login from './components/Login';
+import Homepage from './components/Homepage';
 import Profile from './components/Profile';
 
 const config = {
@@ -18,7 +18,7 @@ function App() {
   return (
     <div>
       <Security {...config}>
-        <Route exact path='/' component={Login} />
+        <Route exact path='/' component={Homepage} />
         <Route path={CALLBACK_PATH} component={LoginCallback} />
         <SecureRoute path='/profile' component={Profile} />
       </Security>
