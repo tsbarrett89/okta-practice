@@ -13,7 +13,7 @@ const Login = () => {
   } else if( !authState.isAuthenticated ) { 
     return (
       <div>
-        <a onClick={login}>Login</a>
+        <button onClick={login}>Login</button>
       </div>
     );
   }

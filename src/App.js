@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import { Security } from '@okta/okta-react';
+import { Security, LoginCallback } from '@okta/okta-react';
 
 import Login from './components/Login';
 
@@ -18,7 +18,7 @@ function App() {
     <div>
       <Security {...config}>
         <Route exact path='/' component={Login} />
-        <Route path={CALLBACK_PATH} />
+        <Route path={CALLBACK_PATH} component={LoginCallback} />
       </Security>
     </div>
   );
