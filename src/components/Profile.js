@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useOktaAuth } from '@okta/okta-react';
 
+import Logout from './Logout';
+
 const Profile = () => { 
     const { authState, authService } = useOktaAuth();
     const [userInfo, setUserInfo] = useState(null);
@@ -25,6 +27,7 @@ const Profile = () => {
             <p></p>
             </div>
         }
+        {authState.isAuthenticated && <Logout />}
         </div>
     );
 };
